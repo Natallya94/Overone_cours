@@ -1,0 +1,95 @@
+{% extends 'main/base.html' %}
+{% load static %}
+{% block title %}Contact{% endblock %}
+{% block active_page %}
+<li><a href="{% url 'index' %}">Home</a></li>
+<li><a href="{% url 'about' %}">About</a></li>
+<li><a href="{% url 'tours' %}">Our Tours</a></li>
+<li><a href="{% url 'contact' %}" class="active">Contact</a></li>
+{% endblock %}
+{% block slider %}
+{% for slide in slider %}
+<li>
+	<div class="tm-banner-inner">
+		<h1 class="tm-banner-title">{{ slide.title }}</h1>
+		<p class="tm-banner-subtitle">{{ slide.subtitle }}</p>
+		<a href="#more" class="tm-banner-link">Learn More</a>
+	</div>
+	<img src="{{ slide.image }}" alt="Image" />
+</li>
+{% endfor %}
+{% endblock %}
+{% block content %}
+	<!-- gray bg -->	
+	<section class="container tm-home-section-1" id="more">
+		<div class="row">
+			<!-- slider -->
+			<div class="flexslider effect2 effect2-contact tm-contact-box-1">
+				<ul class="slides">
+					<li>
+						<img src="img/world-map.png" alt="image" class="contact-image" />
+						<div class="contact-text">
+							<h2 class="slider-title">Lorem Isum Dolor</h2>
+							<h3 class="slider-subtitle">Gravida nibh vel velit auctor aliquet enean sollicitudin lorem quis auctor, nisi elit consequat ipsum</h3>
+							<p class="slider-description">Morbi accumsan ipsum velit. Nam nec tellus a odio tincidunt auctor a ornare odio. Sed non mauris vitae erat consequat auctor eu in elit. Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. <br><br>
+                            Mauris in erat justo. Nullam ac urna eu felis dapibus condimentum sit amet a augue. Sed non neque elit. Sed ut imperdiet nisi. Proin condimentum fermentum nunc. Etiam pharetra, erat sed fermentum feugiat, velit mauris gestas quam, ut aliquam massa nisi.</p>
+							<div class="slider-social">
+								<a href="#" class="tm-social-icon"><i class="fa fa-twitter"></i></a>
+								<a href="#" class="tm-social-icon"><i class="fa fa-facebook"></i></a>
+								<a href="#" class="tm-social-icon"><i class="fa fa-pinterest"></i></a>
+								<a href="#" class="tm-social-icon"><i class="fa fa-google-plus"></i></a>
+							</div>
+						</div>			      
+					</li>
+				</ul>
+			</div>
+		</div>
+	</section>		
+	
+	<!-- white bg -->
+	<section class="section-padding-bottom">
+		<div class="container">
+			<div class="row">
+				<div class="tm-section-header section-margin-top">
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>
+					<div class="col-lg-4 col-md-6 col-sm-6"><h2 class="tm-section-title">Contact Us</h2></div>
+					<div class="col-lg-4 col-md-3 col-sm-3"><hr></div>	
+				</div>				
+			</div>
+			<div class="row">
+				<!-- contact form -->
+				<form action="#" method="post" class="tm-contact-form">
+					<div class="col-lg-6 col-md-6">
+						<div id="google-map">
+							<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2351.937297017695!2d27.60504521574165!3d53.87954268009424!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x46dbce230da36e87%3A0xf6cf6a5ad560e958!2z0J_QsNGA0YLQuNC30LDQvdGB0LrQuNC5INC_0YDQvtGB0L8uIDQ5LCDQnNC40L3RgdC6!5e0!3m2!1sru!2sby!4v1629369934570!5m2!1sru!2sby" style="height: 100%; width: 100%; position: absolute; top: 0px; left: 0px; background-color: rgb(229, 227, 223);"></iframe>
+						</div>
+						<div class="contact-social">
+							<a href="#" class="tm-social-icon tm-social-facebook"><i class="fa fa-facebook"></i></a>
+				      		<a href="#" class="tm-social-icon tm-social-dribbble"><i class="fa fa-dribbble"></i></a>
+				      		<a href="#" class="tm-social-icon tm-social-twitter"><i class="fa fa-twitter"></i></a>
+				      		<a href="#" class="tm-social-icon tm-social-instagram"><i class="fa fa-instagram"></i></a>
+				      		<a href="#" class="tm-social-icon tm-social-google-plus"><i class="fa fa-google-plus"></i></a>
+						</div>
+					</div> 
+					<div class="col-lg-6 col-md-6 tm-contact-form-input">
+						<div class="form-group">
+							<input type="text" id="contact_name" class="form-control" placeholder="NAME" />
+						</div>
+						<div class="form-group">
+							<input type="email" id="contact_email" class="form-control" placeholder="EMAIL" />
+						</div>
+						<div class="form-group">
+							<input type="text" id="contact_subject" class="form-control" placeholder="SUBJECT" />
+						</div>
+						<div class="form-group">
+							<textarea id="contact_message" class="form-control" rows="6" placeholder="MESSAGE"></textarea>
+						</div>
+						<div class="form-group">
+							<button class="tm-submit-btn" type="submit" name="submit">Submit now</button> 
+						</div>               
+					</div>
+				</form>
+			</div>			
+		</div>
+	</section>
+	{% endblock %}
