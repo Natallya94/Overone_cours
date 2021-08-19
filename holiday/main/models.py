@@ -5,14 +5,14 @@ class Check(models.Model):
 
     fname = models.CharField('Имя', max_length=20)
     lname = models.CharField('Фамилия', max_length=20)
-    data = models.EmailField('дата')
+    email = models.EmailField('Почта')
 
     class Meta:
         verbose_name = 'Подпищик'
         verbose_name_plural = 'Подпищики'
 
     def __str__(self):
-        return self.data
+        return self.email
 
 class Slider(models.Model):
 
